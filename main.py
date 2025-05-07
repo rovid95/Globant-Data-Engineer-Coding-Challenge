@@ -9,7 +9,7 @@ app = FastAPI(title="DB Migration API")
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello from FastAPI"}
+    return {"message": "Data Engineer Coding Challenge Rest Local API"}
 
 
 app.include_router(departments.router, prefix="/departments", tags=["departments"])
