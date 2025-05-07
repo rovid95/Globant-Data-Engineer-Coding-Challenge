@@ -21,7 +21,8 @@ def test_hires_by_quarter_table():
     response = client.get("/employees/hires-by-quarter/")
     assert response.status_code == 200
     assert "<table" in response.text
-    assert "Q1" in response.text or "Q2" in response.text
+    assert "<th>department</th>" in response.text
+    assert "<th>job</th>" in response.text
 
 # Negative Test: Invalid route returns 404
 def test_nonexistent_route():
