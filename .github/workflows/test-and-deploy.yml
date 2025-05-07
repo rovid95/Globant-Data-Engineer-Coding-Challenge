@@ -3,7 +3,7 @@ name: Test and Deploy db migration api App
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   test:
