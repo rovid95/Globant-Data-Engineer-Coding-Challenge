@@ -6,6 +6,12 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="DB Migration API")
 
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello from FastAPI"}
+
+
 app.include_router(departments.router, prefix="/departments", tags=["departments"])
 app.include_router(jobs.router, prefix="/jobs", tags=["jobs"])
 app.include_router(employees.router, prefix="/employees", tags=["employees"])
