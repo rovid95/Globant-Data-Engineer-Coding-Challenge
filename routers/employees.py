@@ -57,7 +57,7 @@ def hires_by_quarter(db: Session = Depends(get_db)):
             d.department_name AS department,
             j.job_name AS job,
             ((CAST(STRFTIME('%m', e.hire_date) AS INTEGER) - 1) / 3) + 1 AS quarter,
-            CAST(COUNT(*) AS INTEGER) AS num_hired
+            COUNT(*) AS num_hired
         FROM employees e
         JOIN departments d ON e.department_id = d.id
         JOIN jobs j ON e.job_id = j.id
